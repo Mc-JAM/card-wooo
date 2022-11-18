@@ -77,7 +77,15 @@ public class Inventory : MonoBehaviour
         Card c = _cards.First.Value;
         _cards.Remove(_cards.First);
         _cards.AddLast(c);
-        _pUI.UpdateCards();
+        _pUI.ScrollLeftUpdate();
+    }
+
+    public void ScrollRight()
+    {
+        Card c = _cards.Last.Value;
+        _cards.Remove(_cards.Last);
+        _cards.AddFirst(c);
+        _pUI.ScrollRightUpdate();
     }
 
     public GameObject GetHolding()

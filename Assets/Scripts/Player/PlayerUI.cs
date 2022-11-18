@@ -38,6 +38,22 @@ public class PlayerUI : MonoBehaviour
         }
     }
 
+    public void ScrollLeftUpdate()
+    {
+        GameObject c = _invItems.First.Value;
+        _invItems.Remove(_invItems.First);
+        _invItems.AddLast(c);
+        UpdateCards();
+    }
+
+    public void ScrollRightUpdate()
+    {
+        GameObject c = _invItems.Last.Value;
+        _invItems.Remove(_invItems.Last);
+        _invItems.AddFirst(c);
+        UpdateCards();
+    }
+
     public void OnCardPickUp(Texture t)
     {
         GameObject g = Instantiate(invItem);

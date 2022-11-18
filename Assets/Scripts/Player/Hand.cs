@@ -74,10 +74,12 @@ public class Hand : MonoBehaviour
     {
         if (Input.mouseScrollDelta.y < 0)
         {
-            Debug.Log("Cream");
             inventory.ScrollLeft();
         }
-
+        else if (Input.mouseScrollDelta.y > 0)
+        {
+            inventory.ScrollRight();
+        }
     }
 
     private void checkDrop()
