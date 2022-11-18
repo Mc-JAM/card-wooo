@@ -26,6 +26,7 @@ public class Hand : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        Inputs();
         checkDrop();
         RaycastHit hit;
         if (Physics.SphereCast(Camera.main.ScreenToWorldPoint(Input.mousePosition), .5f, transform.forward, out hit, 3))
@@ -67,6 +68,16 @@ public class Hand : MonoBehaviour
                 }
             }
         }
+    }
+
+    private void Inputs()
+    {
+        if (Input.mouseScrollDelta.y < 0)
+        {
+            Debug.Log("Cream");
+            inventory.ScrollLeft();
+        }
+
     }
 
     private void checkDrop()

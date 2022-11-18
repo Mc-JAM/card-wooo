@@ -71,6 +71,15 @@ public class Inventory : MonoBehaviour
         }
         return false;
     }
+
+    public void ScrollLeft()
+    {
+        Card c = _cards.First.Value;
+        _cards.Remove(_cards.First);
+        _cards.AddLast(c);
+        _pUI.UpdateCards();
+    }
+
     public GameObject GetHolding()
     {
         return inventory[invPointer];
