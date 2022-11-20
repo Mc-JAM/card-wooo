@@ -80,6 +80,14 @@ public class Hand : MonoBehaviour
         {
             inventory.ScrollRight();
         }
+        hotbar = inventory.GetHotBar();
+        if (Input.GetKeyDown(KeyCode.Mouse0))
+        {
+            if (hotbar[0] != null)
+            {
+                hotbar[0].Special();
+            }
+        }
     }
 
     private void checkDrop()
