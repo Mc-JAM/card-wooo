@@ -2,13 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BaseAttack : Card
+public class Ice : Card
 {
     [SerializeField]
-    GameObject bullet;
+    GameObject icebullet;
     public override void Special()
     {
-        GameObject b = Instantiate(bullet);
+        GameObject b = Instantiate(icebullet);
         b.transform.position = SimpleGM.instance.pManager.transform.position + SimpleGM.instance.pManager.transform.GetChild(0).transform.forward * 2;
         b.transform.forward = SimpleGM.instance.pManager.transform.GetChild(0).transform.forward;
     }

@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerManager : MonoBehaviour, IDamageable
 {
     [SerializeField]
-    private float health = 100, shield = 100, maxShield = 100;
+    private float health = 100;
     private const float maxHealth = 100;
     [SerializeField]
     private float speed = 4;
@@ -38,18 +38,7 @@ public class PlayerManager : MonoBehaviour, IDamageable
 
     public void Damage(float damage)
     {
-        float damageToHealth;
-        try
-        {
-            damageToHealth = damage * (shield / maxShield);
-            shield -= damageToHealth;
-            damageToHealth = damage - damageToHealth;
-        }
-        catch
-        {
-            damageToHealth = damage;
-        }
-        health -= damageToHealth;
+        health -= damage;
         if (health > 0) return;
         Death();
     }
