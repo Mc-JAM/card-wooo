@@ -29,7 +29,7 @@ public class Inventory : MonoBehaviour
             return false;
         }
         _=_cards.AddFirst(newCard);
-        _pUI.OnCardPickUp(null);
+        _pUI.OnCardPickUp(newCard.GetImage());
         return true;
     }
 

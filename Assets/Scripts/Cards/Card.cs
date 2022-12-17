@@ -5,7 +5,7 @@ using UnityEngine;
 public class Card : MonoBehaviour, IItem
 {
     [SerializeField]
-    RenderTexture img;
+    Texture2D img;
 
     private float _damage;
     private float _protection;
@@ -31,7 +31,7 @@ public class Card : MonoBehaviour, IItem
         throw new System.NotImplementedException();
     }
 
-    public RenderTexture GetUIComponent()
+    public Texture2D GetUIComponent()
     {
         return img;
     }
@@ -39,6 +39,11 @@ public class Card : MonoBehaviour, IItem
     public virtual void Special()
     {
 
+    }
+
+    public Texture2D GetImage()
+    {
+        return img;
     }
 
     // Start is called before the first frame update

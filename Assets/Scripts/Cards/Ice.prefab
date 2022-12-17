@@ -63,7 +63,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 5730f3d8641456c43a64a5be40f47d95, type: 2}
+  - {fileID: 2100000, guid: 39db46537c94a6d4aa71a6a69e8a0679, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -110,5 +110,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4948bb06d0268643b79d41bf443331d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  img: {fileID: 0}
+  img: {fileID: 2800000, guid: 9206acdceb33d9241a5ca9680bc276e6, type: 3}
   icebullet: {fileID: 7568425013728161340, guid: d31a8fe539a32ee4a845a4d39260d393, type: 3}

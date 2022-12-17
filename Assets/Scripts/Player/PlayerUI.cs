@@ -58,10 +58,7 @@ public class PlayerUI : MonoBehaviour
     {
         GameObject g = Instantiate(invItem);
         g.transform.SetParent(transform, false);
-        if (Random.Range(0, 3) < 2)
-            g.GetComponent<RawImage>().color = Color.black;
-        else
-            g.GetComponent<RawImage>().color = Color.grey;
+        g.GetComponent<RawImage>().texture = t;
         g.transform.localPosition = _cards[0].transform.localPosition;
         _invItems.AddFirst(g);
         UpdateCards();
