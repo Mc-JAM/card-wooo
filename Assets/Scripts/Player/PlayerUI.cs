@@ -2,9 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class PlayerUI : MonoBehaviour
 {
+    [SerializeField]
+    Slider _health;
+    [SerializeField]
+    TMP_Text _hText;
+
     [SerializeField]
     GameObject invHolder;
     [SerializeField]
@@ -25,7 +31,7 @@ public class PlayerUI : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        GetHealthFromPlayer();
     }
 
     public void UpdateCards()
@@ -62,5 +68,11 @@ public class PlayerUI : MonoBehaviour
         g.transform.localPosition = _cards[0].transform.localPosition;
         _invItems.AddFirst(g);
         UpdateCards();
+    }
+
+    private void GetHealthFromPlayer()
+    {
+        _health.value = SimpleGM.instance.pManager.GetHealth();
+        _hText.text = ((int)SimpleGM.instance.pManager.GetHealth()).ToString();
     }
 }

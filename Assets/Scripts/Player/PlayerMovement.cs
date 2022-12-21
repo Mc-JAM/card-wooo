@@ -64,7 +64,7 @@ public class PlayerMovement : MonoBehaviour
     {
         if (cController.isGrounded)
         {
-            vVel = -gravity * pManager.mass * Time.deltaTime; //Literally just applying gravity
+            vVel = -gravity * 65 * Time.deltaTime; //Literally just applying gravity
             if (input.GetButtonDown("jump"))
             {
                 vVel = 8;

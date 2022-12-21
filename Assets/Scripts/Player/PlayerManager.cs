@@ -9,7 +9,6 @@ public class PlayerManager : MonoBehaviour, IDamageable
     private const float maxHealth = 100;
     [SerializeField]
     private float speed = 4;
-    public float mass = 65.00f;
 
     private SimpleGM simpleGM;
 
@@ -51,5 +50,10 @@ public class PlayerManager : MonoBehaviour, IDamageable
     public void GiveHealth(float h)
     {
         health = Mathf.Clamp(health + h, 0, maxHealth);
+    }
+
+    public float GetHealth()
+    {
+        return health;
     }
 }
